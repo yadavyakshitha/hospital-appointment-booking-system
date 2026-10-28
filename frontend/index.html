@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a hospital appointment online.">
+    <title>CarePoint | Hospital Appointment Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">+</span>
+            <span>CarePoint</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#doctors">Doctors</a>
+            <a href="#booking">Book Appointment</a>
+            <a href="#status">Check Status</a>
+            <button class="btn btn-outline" id="staffLoginBtn">
+                Staff Login
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">YOUR HEALTH, OUR PRIORITY</p>
+
+                <h1>
+                    Healthcare made
+                    <span>simple and accessible.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Find the right doctor, choose a convenient time,
+                    and request your hospital appointment online.
+                </p>
+
+                <a href="#booking" class="btn btn-primary">
+                    Book an Appointment →
+                </a>
+
+                <div class="hero-points">
+                    <span>✓ Easy booking</span>
+                    <span>✓ Experienced specialists</span>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="medical-icon">✚</div>
+                <p class="eyebrow">CAREPOINT SERVICES</p>
+                <h2>Your health journey starts here.</h2>
+
+                <div class="service-item">
+                    <span class="number">01</span>
+                    <div>
+                        <h3>Choose a Doctor</h3>
+                        <p>Explore available specialists.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <span class="number">02</span>
+                    <div>
+                        <h3>Select a Time</h3>
+                        <p>Choose an available appointment slot.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <span class="number">03</span>
+                    <div>
+                        <h3>Track Your Request</h3>
+                        <p>Check your appointment status.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctors Section -->
+        <section class="section" id="doctors">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">OUR SPECIALISTS</p>
+                    <h2>Meet Our Doctors</h2>
+                </div>
+
+                <p class="section-description">
+                    Choose a specialist according to your healthcare needs.
+                </p>
+            </div>
+
+            <div class="doctor-grid" id="doctorList">
+                <article class="doctor-card">
+                    <div class="doctor-avatar">AR</div>
+                    <h3>Dr. Ananya Rao</h3>
+                    <p class="specialty">General Medicine</p>
+                    <p>General health consultations and routine checkups.</p>
+                    <button class="btn btn-outline choose-doctor"
+                        data-doctor="Dr. Ananya Rao">
+                        Choose Doctor
+                    </button>
+                </article>
+
+                <article class="doctor-card">
+                    <div class="doctor-avatar">RM</div>
+                    <h3>Dr. Rahul Mehta</h3>
+                    <p class="specialty">Cardiology</p>
+                    <p>Heart health consultations and cardiovascular care.</p>
+                    <button class="btn btn-outline choose-doctor"
+                        data-doctor="Dr. Rahul Mehta">
+                        Choose Doctor
+                    </button>
+                </article>
+
+                <article class="doctor-card">
+                    <div class="doctor-avatar">PS</div>
+                    <h3>Dr. Priya Sharma</h3>
+                    <p class="specialty">Dermatology</p>
+                    <p>Consultations for skin, hair, and nail concerns.</p>
+                    <button class="btn btn-outline choose-doctor"
+                        data-doctor="Dr. Priya Sharma">
+                        Choose Doctor
+                    </button>
+                </article>
+
+                <article class="doctor-card">
+                    <div class="doctor-avatar">NK</div>
+                    <h3>Dr. Naveen Kumar</h3>
+                    <p class="specialty">Orthopedics</p>
+                    <p>Consultations for bones, joints, and muscles.</p>
+                    <button class="btn btn-outline choose-doctor"
+                        data-doctor="Dr. Naveen Kumar">
+                        Choose Doctor
+                    </button>
+                </article>
+
+                <article class="doctor-card">
+                    <div class="doctor-avatar">SR</div>
+                    <h3>Dr. Sahana Reddy</h3>
+                    <p class="specialty">Pediatrics</p>
+                    <p>General healthcare consultations for children.</p>
+                    <button class="btn btn-outline choose-doctor"
+                        data-doctor="Dr. Sahana Reddy">
+                        Choose Doctor
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="section booking-section" id="booking">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">BOOK YOUR VISIT</p>
+                    <h2>Request an Appointment</h2>
+                </div>
+            </div>
+
+            <div class="booking-layout">
+
+                <form id="bookingForm" class="form-card">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientName">Full Name *</label>
+                            <input
+                                type="text"
+                                id="patientName"
+                                name="patientName"
+                                maxlength="100"
+                                autocomplete="name"
+                                required
+                                placeholder="Enter your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                maxlength="20"
+                                required
+                                placeholder="Enter phone number">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                maxlength="254"
+                                placeholder="Enter your email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="doctor">Select Doctor *</label>
+                            <select id="doctor" name="doctor" required>
+                                <option value="">Choose a doctor</option>
+                                <option value="Dr. Ananya Rao">Dr. Ananya Rao — General Medicine</option>
+                                <option value="Dr. Rahul Mehta">Dr. Rahul Mehta — Cardiology</option>
+                                <option value="Dr. Priya Sharma">Dr. Priya Sharma — Dermatology</option>
+                                <option value="Dr. Naveen Kumar">Dr. Naveen Kumar — Orthopedics</option>
+                                <option value="Dr. Sahana Reddy">Dr. Sahana Reddy — Pediatrics</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Appointment Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Appointment Time *</label>
+                            <select id="time" name="time" required>
+                                <option value="">Choose a time</option>
+                                <option value="09:00">09:00 AM</option>
+                                <option value="09:30">09:30 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="10:30">10:30 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="11:30">11:30 AM</option>
+                                <option value="02:00">02:00 PM</option>
+                                <option value="02:30">02:30 PM</option>
+                                <option value="03:00">03:00 PM</option>
+                                <option value="03:30">03:30 PM</option>
+                                <option value="04:00">04:00 PM</option>
+                                <option value="04:30">04:30 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">Reason for Visit</label>
+                        <textarea
+                            id="reason"
+                            name="reason"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Briefly describe your reason for visiting"></textarea>
+                    </div>
+
+                    <p class="privacy-note">
+                        This is a student demonstration project. Please use
+                        fictional information rather than real patient details.
+                    </p>
+
+                    <button type="submit" class="btn btn-primary">
+                        Request Appointment
+                    </button>
+
+                    <div id="bookingMessage" class="message"
+                        role="status" aria-live="polite"></div>
+                </form>
+
+                <aside class="info-card">
+                    <div class="info-icon">i</div>
+                    <h3>How It Works</h3>
+                    <p>Submit your appointment request using the form.</p>
+                    <p>Save the reference number shown after successful booking.</p>
+                    <p>Use that reference number to check your appointment status.</p>
+                    <hr>
+                    <h3>Need urgent medical help?</h3>
+                    <p>This demo is not an emergency service. Contact your local emergency service or hospital for urgent care.</p>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Appointment Status Section -->
+        <section class="section" id="status">
+            <div class="status-card">
+                <div>
+                    <p class="eyebrow">TRACK YOUR REQUEST</p>
+                    <h2>Check Appointment Status</h2>
+                    <p>Enter your appointment reference number.</p>
+                </div>
+
+                <form id="statusForm" class="status-form">
+                    <label class="visually-hidden" for="reference">
+                        Appointment reference
+                    </label>
+
+                    <input
+                        type="text"
+                        id="reference"
+                        name="reference"
+                        maxlength="12"
+                        placeholder="Enter reference number"
+                        required>
+
+                    <button type="submit" class="btn btn-dark">
+                        Check Status
+                    </button>
+                </form>
+
+                <div id="statusMessage" class="message"
+                    role="status" aria-live="polite"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Staff Login Modal -->
+    <div id="staffModal" class="modal-backdrop" hidden>
+        <section class="modal" role="dialog"
+            aria-modal="true" aria-labelledby="staffTitle">
+
+            <button type="button" id="closeModal"
+                class="modal-close" aria-label="Close">
+                &times;
+            </button>
+
+            <p class="eyebrow">AUTHORIZED PERSONNEL</p>
+            <h2 id="staffTitle">Staff Login</h2>
+
+            <form id="staffLoginForm">
+                <div class="form-group">
+                    <label for="staffUsername">Username</label>
+                    <input type="text" id="staffUsername"
+                        name="username" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="staffPassword">Password</label>
+                    <input type="password" id="staffPassword"
+                        name="password" required autocomplete="current-password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Sign In
+                </button>
+
+                <div id="loginMessage" class="message"
+                    role="status" aria-live="polite"></div>
+            </form>
+        </section>
+    </div>
+
+    <!-- Staff Dashboard -->
+    <section id="staffDashboard" class="section admin-section" hidden>
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">STAFF WORKSPACE</p>
+                <h2>Appointment Management</h2>
+            </div>
+
+            <button id="logoutBtn" class="btn btn-outline">
+                Sign Out
+            </button>
+        </div>
+
+        <div class="admin-controls">
+            <label for="statusFilter">Filter by status</label>
+            <select id="statusFilter">
+                <option value="">All appointments</option>
+                <option value="pending">Pending</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+
+            <button id="refreshBtn" class="btn btn-dark">
+                Refresh
+            </button>
+        </div>
+
+        <div id="adminMessage" class="message"></div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Reference</th>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="appointmentTableBody">
+                    <tr>
+                        <td colspan="7">Sign in to view appointments.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="#home" class="logo">
+            <span class="logo-icon">+</span>
+            <span>CarePoint</span>
+        </a>
+
+        <p>Hospital Appointment Booking System</p>
+        <p>College project demonstration · Not for real patient care</p>
+    </footer>
+
+</body>
+</html>
